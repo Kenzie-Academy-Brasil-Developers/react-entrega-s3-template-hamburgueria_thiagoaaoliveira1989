@@ -1,0 +1,18 @@
+.btn_default {
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    color: #fff;
+    width: Hug (130px);
+    height: Fixed (60px);
+    border: none;
+    border-radius: 8px;
+    padding: 20.5px 20px;
+    line-height: 19.36px;
+    background-color: #bdbdbd;
+
+
+        &:hover {
+            background-color: var(--color-primary);
+        }
+}
