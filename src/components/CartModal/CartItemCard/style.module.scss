@@ -1,0 +1,61 @@
+.productCard {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1.2962rem;
+
+
+    .boxImage {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 82.26px;
+        max-height: 80px;
+        width: 100%;
+        height: 100%;
+        background-color: var(--color-grey-100);
+
+        &>img {
+            max-width: 55px;
+            max-height: 53.49px;
+        }
+    }
+
+    .boxInfo {
+        justify-content: space-between;
+        display: flex;
+        width: 100%;
+
+        .boxInfo_product {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            width: 40%;
+
+
+
+        }
+
+        .boxInfo_btns {
+            display: flex;
+            gap: 0.4rem;
+            justify-content: center;
+            align-items: center;
+
+            &>button {
+                cursor: pointer;
+                border: 0;
+            }
+        }
+
+        &>button {
+            cursor: pointer;
+            border: 0;
+        }
+
+    }
+
+
+}

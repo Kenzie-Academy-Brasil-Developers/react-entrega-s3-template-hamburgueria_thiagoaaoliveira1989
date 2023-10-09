@@ -1,0 +1,73 @@
+.overlayBox {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-black20);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .modalbox {
+        position: relative;
+        background-color: var(--color-grey-0);
+
+        max-width: 30.25rem;
+        width: 100%;
+
+        margin: 0 1rem;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.25rem;
+        border-radius: 8px;
+
+        .menuBox {
+            width: 100%;
+            height: 3.5625rem;
+            border-radius: 8px 8px 0 0;
+            padding: 0.875rem;
+            background-color: var(--color-primary);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: var(--color-grey-0);
+
+            &>button {
+                background-color: transparent;
+                border: none;
+
+            }
+        }
+
+        .productList {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 14px 30px 24px 14px;
+            gap: 14px;
+
+        }
+
+
+        .boxTotal {
+            max-width: 452px;
+            width: 100%;
+            border-top: 2px solid var(--color-grey-100);
+
+            .boxTotalInfo{
+                margin-top: 15px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+
+    }
+
+
+
+}
