@@ -86,7 +86,13 @@ export const HomePage = () => {
 
    return (
       <>
-         <Header openModel={openModel} />
+         <Header
+            openModel={openModel}
+            productList={productList}
+            cartList={cartList}
+            setProductList={setProductList}
+
+         />
          <main className={styles.main_cards}>
             <ProductList
                productList={productList}

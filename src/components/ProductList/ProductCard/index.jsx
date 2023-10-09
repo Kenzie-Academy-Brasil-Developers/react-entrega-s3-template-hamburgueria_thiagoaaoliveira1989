@@ -32,12 +32,12 @@ export const ProductCard = ({ product, addProductCart }) => {
                 <div className={styles.boxButton}>
                     <span>Quantidade: </span>
                     <div className={styles.boxQuant}>
-                        <button onClick={() => { addQuantity() }} aria-label="delete" title="Adicionar quantidade ">
-                            <MdOutlineAddCircle color={"green"} size={21} />
+                        <button onClick={() => { addQuantity() }} aria-label="delete" title="Adicionar quantidade" className="color-primary">
+                            <MdOutlineAddCircle  size={21} />
                         </button>
                         <h3>{quantProduct}</h3>
-                        <button onClick={() => { removeQuantity() }} aria-label="delete" title="Adicionar quantidade ">
-                            <MdOutlineRemoveCircle color={"red"} size={21} />
+                        <button onClick={() => { removeQuantity() }} aria-label="delete" title="Adicionar quantidade" className="color-secundary">
+                            <MdOutlineRemoveCircle  size={21} />
                         </button>
                     </div>
                 </div>
