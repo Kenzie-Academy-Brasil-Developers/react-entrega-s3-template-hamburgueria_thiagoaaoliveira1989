@@ -16,6 +16,10 @@
     &.Three {
         font-size: 1.125rem;
         line-height: 1.5rem;
+            
+        @media (max-width: 412px) {
+            font-size: 0.9rem;
+        }
     }
 
     &.Four {

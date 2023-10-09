@@ -44,11 +44,27 @@
         }
 
         .productList {
+            max-height: 360px;
             width: 100%;
+            height: 100%;
             display: flex;
+            flex-wrap: nowrap;
             flex-direction: column;
             padding: 14px 30px 24px 14px;
             gap: 14px;
+
+            overflow: auto;
+
+            @media (max-width: 360px) {
+                max-height: 330px;
+                height: 100%;
+                max-width: 350px;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                overflow: auto;
+            }
 
         }
 
@@ -58,11 +74,17 @@
             width: 100%;
             border-top: 2px solid var(--color-grey-100);
 
-            .boxTotalInfo{
+            .boxTotalInfo {
                 margin-top: 15px;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
+
+
+            }
+
+            @media (max-width: 412px) {
+                padding: 0 1rem;
             }
         }
 
