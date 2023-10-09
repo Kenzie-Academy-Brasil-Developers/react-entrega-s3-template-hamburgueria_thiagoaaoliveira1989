@@ -3,43 +3,7 @@ import Logo from "../../assets/Logo.svg";
 import { MdSearch, MdShoppingCart } from "react-icons/md";
 import styles from "./style.module.scss";
 
-export const Header = ({ openModel, productList, setProductList, cartList }) => {
-   const [copyProductList, setCopyProductList] = useState([]);
-   const [value, setValue] = useState("");
-   const [filterProductList, setFilterProductList] = useState([]);
-
-
-   useEffect(() => {
-      setCopyProductList(productList);
-    }, [productList]);
-
-   const filtered = () => {
-      if (value !== "") {
-         return copyProductList.filter((product) =>
-            product.name.toLowerCase().includes(value.toLowerCase())
-         );
-      } else {
-         return [];
-      }
-   }
-
-   useEffect(() => {
-      // Atualize filterProductList quando o valor mudar
-      setFilterProductList(filtered());
-      console.log(value);
-      console.log(filterProductList);
-      
-      if (value !== "" && filterProductList.length > 0) {
-         console.log(filterProductList);
-         return setProductList(filterProductList);
-      }
-      
-      console.log(copyProductList);
-      setProductList(copyProductList)
-
-
-
-   }, [value, productList.name, filterProductList.name]);
+export const Header = ({ openModel, cartList, search, setSearch }) => {
 
    return (
       <header className={styles.header_menu}>
@@ -50,8 +14,8 @@ export const Header = ({ openModel, productList, setProductList, cartList }) => 
                   <form>
                      <input
                         type="text"
-                        value={value}
-                        onChange={(e) => setValue(e.target.value)}
+                        value={search}
+                        onChange={(e) => setSearch(e.target.value)}
                         placeholder="Digite o produto"
                      />
                      <button type="submit" onClick={(e) => { e.preventDefault() }}>

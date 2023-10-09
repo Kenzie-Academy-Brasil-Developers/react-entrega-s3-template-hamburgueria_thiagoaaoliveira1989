@@ -4,16 +4,12 @@ import { Header } from "../../components/Header";
 import { ProductList } from "../../components/ProductList";
 import { burguerApi } from "../../services/api";
 import styles from "./style.module.scss";
+import { toast } from "react-toastify";
 
-// useEffect montagem - carrega os produtos da API e joga em productList - ok
-// useEffect atualização - salva os produtos no localStorage (carregar no estado)
-// adição, exclusão, e exclusão geral do carrinho
-// renderizações condições e o estado para exibir ou não o carrinho
-// filtro de busca
-// estilizar tudo com sass de forma responsiva
 export const HomePage = () => {
    const localCart = localStorage.getItem("@ITEMCART");
    const [productList, setProductList] = useState([]);
+   const [search, setSearch] = useState("");
    const [cartList, setCartList] = useState(localCart ? JSON.parse(localCart) : []);
    const [statusModal, setStatusModal] = useState(null);
 
@@ -21,16 +17,19 @@ export const HomePage = () => {
    useEffect(() => {
       const getBurguers = async () => {
          try {
-            const { data } = await burguerApi.get("/products")
-            setProductList(data);
-
+            const response = await burguerApi.get("/products");
+            const searchData = response.data.filter(product => {
+               return product.name.toLowerCase().includes(search.toLowerCase());
+            });
+            setProductList(searchData);
          } catch (error) {
-
-            console.log(error.message);
+            toast.error(error.message);
          }
-      }
+      };
+
       getBurguers();
-   }, [])
+
+   }, [search])
 
 
    useEffect(() => {
@@ -44,10 +43,10 @@ export const HomePage = () => {
       if (!hasProduct) {
          productToAdd.quant = quant;
          setCartList([...cartList, productToAdd]);
-         console.log(' adicionada aos favoritos!');
+         toast.success('produto adicionado ao carrinho!');
 
       } else {
-         console.log('Essa foto já foi adicionada aos favoritos!');
+         toast.error('Essa produto já foi adicionado, abra o carrinho para alteralo!');
       }
 
 
@@ -55,11 +54,17 @@ export const HomePage = () => {
 
    const removeProductCart = (productId) => {
       const newCartList = cartList.filter((product) => product.id !== productId);
-      setCartList(newCartList);
+      if (newCartList) {
+         setCartList(newCartList);
+         toast.success("Produto deletado com sucesso");
+      } else {
+         toast.error("Error ao deletar Produto");
+      }
    }
 
    const removeAllProductCart = () => {
       setCartList([]);
+      toast.success("Todos os produtos deletados do carrinho!");
    }
 
    const updateProductQuantity = (productId, newQuantity) => {
@@ -80,17 +85,13 @@ export const HomePage = () => {
       setStatusModal(false);
    }
 
-
-
-
-
    return (
       <>
          <Header
             openModel={openModel}
-            productList={productList}
             cartList={cartList}
-            setProductList={setProductList}
+            search={search}
+            setSearch={setSearch}
 
          />
          <main className={styles.main_cards}>
