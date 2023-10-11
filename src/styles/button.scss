@@ -12,12 +12,12 @@
     background-color: #bdbdbd;
 
 
-        &:hover {
-            background-color: var(--color-primary);
-        }
+    &:hover {
+        background-color: var(--color-primary);
+    }
 }
 
-.btn{
+.btn {
     width: 100%;
     border: none;
     border-radius: 8px;
@@ -25,5 +25,11 @@
     background-color: var(--color-grey-400);
     margin-top: 14px;
     margin-bottom: 18px;
-    
+
+
+    &:hover {
+        background-color: var(--color-primary);
+    }
+
+
 }

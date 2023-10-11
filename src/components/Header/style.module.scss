@@ -1,20 +1,30 @@
 .header_menu {
     max-width: 100vw;
-    height: 120px;
+    height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: var(--color-grey-0);
+    padding: 28px 69px;
+
+    @media (max-width: 1200px) {
+        padding: 28px clamp(20px, 69px, 20px); // Apenas o primeiro valor é responsivo
+    }
+
+    @media (max-width: 480px) {
+        padding: 27px 16px;
+        height: 76px;
+    }
+
 }
 
 .container {
     display: flex;
+    max-width: 1368px;
     width: 100%;
-    max-width: 1366px;
     flex-direction: column;
     margin: 0 auto;
-    padding: 1.5rem;
     align-items: center;
-    justify-content: center;
 }
 
 .container_menu {
@@ -25,6 +35,7 @@
 
     &>button {
         display: flex;
+        flex-direction: row-reverse;
         align-items: flex-end;
         border: none;
         background-color: transparent;
@@ -33,52 +44,12 @@
     }
 }
 
-.boxFinder {
-    max-width: 350px;
-    width: 100%;
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    align-items: center;
-
-    &>form {
-        padding: 2px 5px;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: var(--color-grey-100);
-        border-radius: 8px;
-    }
-
-    &>form>input {
-        background-color: transparent;
-        width: 100%;
-        height: 21px;
-        border: none;
-
-        &:focus {
-            outline: none;
-        }
-    }
-
-
-
-
-
-    &>button {
-        border: none;
-        background-color: transparent;
-        display: flex;
-        align-items: flex-end;
-    }
-}
 
 
 .spanCart {
     position: relative;
     top: -21px;
-    left: -14px;
+    left: 39px;
     background-color: var(--color-primary);
     padding: 5px 6px;
     border-radius: 8px;

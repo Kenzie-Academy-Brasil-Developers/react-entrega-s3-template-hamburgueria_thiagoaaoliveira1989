@@ -5,6 +5,7 @@ import { ProductList } from "../../components/ProductList";
 import { burguerApi } from "../../services/api";
 import styles from "./style.module.scss";
 import { toast } from "react-toastify";
+import { Search } from "../../components/Search";
 
 export const HomePage = () => {
    const localCart = localStorage.getItem("@ITEMCART");
@@ -90,6 +91,8 @@ export const HomePage = () => {
          <Header
             openModel={openModel}
             cartList={cartList}
+         />
+         <Search
             search={search}
             setSearch={setSearch}
 

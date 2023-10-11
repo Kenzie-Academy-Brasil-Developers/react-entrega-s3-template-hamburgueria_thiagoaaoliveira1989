@@ -1,0 +1,50 @@
+.boxFinder {
+    width: 100%;
+    max-width: 1366px;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+
+    padding: 16px 69px 0 69px;
+
+    &>form {
+        padding: 2px 5px;
+        width: 380px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--color-grey-100);
+        border-radius: 8px;
+
+
+
+    }
+
+    &>form>input {
+        background-color: transparent;
+        width: 100%;
+        height: 21px;
+        border: none;
+
+        &:focus {
+            outline: none;
+        }
+
+    }
+
+    &>form>button {
+        border: none;
+        background-color: transparent;
+        display: flex;
+        align-items: flex-end;
+    }
+
+    @media (max-width: 412px) {
+
+        &>form {
+            width: 350px;
+        }
+    }
+
+}

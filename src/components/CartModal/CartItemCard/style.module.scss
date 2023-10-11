@@ -29,8 +29,6 @@
         width: 100%;
 
 
-
-
         .boxInfo_product {
             display: flex;
             flex-direction: column;
@@ -50,6 +48,8 @@
             &>button {
                 cursor: pointer;
                 border: 0;
+
+
             }
 
 
@@ -64,6 +64,8 @@
         &>button {
             cursor: pointer;
             border: 0;
+
+
         }
 
     }

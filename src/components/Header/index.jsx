@@ -3,7 +3,7 @@ import Logo from "../../assets/Logo.svg";
 import { MdSearch, MdShoppingCart } from "react-icons/md";
 import styles from "./style.module.scss";
 
-export const Header = ({ openModel, cartList, search, setSearch }) => {
+export const Header = ({ openModel, cartList}) => {
 
    return (
       <header className={styles.header_menu}>
@@ -15,19 +15,7 @@ export const Header = ({ openModel, cartList, search, setSearch }) => {
                   <span className={styles.spanCart}>{cartList.length}</span>
                </button>
             </div>
-            <div className={styles.boxFinder}>
-               <form>
-                  <input
-                     type="text"
-                     value={search}
-                     onChange={(e) => setSearch(e.target.value)}
-                     placeholder="Digite o produto"
-                  />
-                  <button type="submit" onClick={(e) => { e.preventDefault() }}>
-                     <MdSearch size={21} />
-                  </button>
-               </form>
-            </div>
+          
          </div>
       </header>
    );

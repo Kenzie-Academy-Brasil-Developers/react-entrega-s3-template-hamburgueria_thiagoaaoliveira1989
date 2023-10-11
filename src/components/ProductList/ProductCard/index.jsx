@@ -24,8 +24,8 @@ export const ProductCard = ({ product, addProductCart }) => {
             <div className={styles.infoBox}>
 
                 <div className={styles.info_card}>
-                    <h3>{product.name}</h3>
-                    <span className={styles.span1}>{product.category}</span>
+                    <h3 className="title Three">{product.name}</h3>
+                    <span className="text caption">{product.category}</span>
                     <span className={styles.price}>{product.price.toLocaleString('pt-BR', { style: "currency", currency: "BRL" })}</span>
                     <button onClick={() => { addProductCart(product, quantProduct) }} className="btn_default">Adicionar</button>
                 </div>
